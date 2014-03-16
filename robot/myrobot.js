@@ -5,9 +5,9 @@
   MyRobot = (function(superclass){
     var prototype = extend$((import$(MyRobot, superclass).displayName = 'MyRobot', MyRobot), superclass).prototype, constructor = MyRobot;
     prototype.onIdle = function(){
-      this.move_forwards(50);
       this.turn_turret_left(10);
-      this.turn_right(90);
+      this.turn_right(45);
+      this.move_forwards(20);
     };
     prototype.onWallCollide = function(){
       this.move_opposide(10);
@@ -18,6 +18,7 @@
     };
     prototype.onEnemySpot = function(){
       this.yell("Fire!");
+      this.shoot();
       this.shoot();
     };
     function MyRobot(){
