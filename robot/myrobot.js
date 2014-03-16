@@ -13,7 +13,7 @@
         tinyMove = 20;
         tinyShoot = 5;
         leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
-        if (leftDist > 270) {
+        if (leftDist > 360) {
           leftDist = leftDist - 360;
         }
         rightDist = this.myVarEnemy[0].angle - myAngle;
