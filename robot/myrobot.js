@@ -20,7 +20,7 @@
         if (rightDist < 0) {
           rightDist = 360 + rightDist;
         }
-        if (leftDist != rightDist) {
+        if (leftDist !== rightDist) {
           if (Math.random() > 0.5) {
             forward = true;
           }
