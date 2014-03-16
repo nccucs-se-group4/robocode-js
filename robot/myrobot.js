@@ -27,7 +27,7 @@
           if (leftDist > rightDist) {
             this.turn_turret_right(rightDist + tinyShoot);
           } else {
-            this.turn_turret_left(leftDist + tinyShoot);
+            this.turn_turret_left(leftDist + tinyShoot + 30);
           }
           if (forward) {
             this.move_forwards(tinyMove);
