@@ -40,9 +40,9 @@
         this.myVarEnemy = undefined;
       }
       else {
-        this.turn_turret_left(30);
-        this.turn_left(30);
-        this.move_forwards(Math.random() * 50 + 10);
+        this.turn_turret_left(15);
+        this.turn_left(45);
+        this.move_forwards(50);
       }
     };
     prototype.onWallCollide = function(){
