@@ -57,8 +57,8 @@
           }
           return;
         }
-        this.turn_turret_left(20);
-        this.turn_left(20);
+        this.turn_turret_left(30);
+        this.turn_left(30);
         this.move_forwards(Math.random() * 50 + 10);
       }
     };
@@ -68,9 +68,9 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
-      this.turn_left(90);
-      this.move_forwards(200);
-      this.idleCount = 0;
+//      this.turn_left(90);
+//      this.move_forwards(200);
+//      this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
       this.myVarEnemy = this.enemySpot;
