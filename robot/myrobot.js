@@ -69,6 +69,7 @@
     };
     prototype.onHit = function(){
       this.move_forwards(120);
+      this.doSearch();
       this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
