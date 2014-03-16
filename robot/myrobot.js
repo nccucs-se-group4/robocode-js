@@ -4,22 +4,40 @@
   importScripts('../base-robot.js');
   MyRobot = (function(superclass){
     var prototype = extend$((import$(MyRobot, superclass).displayName = 'MyRobot', MyRobot), superclass).prototype, constructor = MyRobot;
-    prototype.onIdle = function(){
-      this.turn_turret_left(10);
+    var idleCount = 0;
+    prototype.doSearch = function(){
+      this.turn_turret_right(20);
       this.turn_right(45);
       this.move_forwards(20);
+    };
+    prototype.onIdle = function(){
+      var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
+      ++this.idleCount;
+      myAngle = this.me.angle % 360;
+      if (this.myVarEnemy) {
+        forward = false;
+        tinyMove = Math.random() * 30
+        tinyShoot = Math.random() * 8 + 1;
+      }
+      else {
+        this.turn_turret_left(20);
+        this.turn_left(20);
+        this.move_forwards(Math.random() * 30 + 10);
+      }
     };
     prototype.onWallCollide = function(){
       this.move_opposide(10);
       this.turn_left(90);
+      this.idleCount = 0;
     };
     prototype.onHit = function(){
       this.yell("Oops!");
+      this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
-      this.yell("Fire!");
+      this.myVarEnemy = this.enemySpot;
       this.shoot();
-      this.shoot();
+      this.idleCount = 0;
     };
     function MyRobot(){
       MyRobot.superclass.apply(this, arguments);
