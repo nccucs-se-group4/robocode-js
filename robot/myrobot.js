@@ -8,7 +8,7 @@
     prototype.doSearch = function(){
       this.turn_turret_right(45);
       this.turn_right(20);
-      this.move_forwards(20);
+      this.move_forwards(45);
     };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
@@ -17,7 +17,7 @@
       if (this.myVarEnemy) {
         forward = false;
         tinyMove = Math.random() * 30
-        tinyShoot = Math.random() * 8 + 1;
+        tinyShoot = Math.random() * 10;
         leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
         if (leftDist > 360) {
           leftDist = leftDist - 360;
