@@ -18,32 +18,32 @@
         forward = false;
         tinyMove = Math.random() * 30
         tinyShoot = Math.random() * 10;
-        leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
-        if (leftDist > 360) {
-          leftDist = leftDist - 360;
-        }
-        rightDist = this.myVarEnemy[0].angle - myAngle;
-        if (rightDist < 0) {
-          rightDist = 360 + rightDist;
-        }
-        if (leftDist !== rightDist) {
-          if (Math.random() > 0.5) {
-            forward = true;
-          }
-          if (leftDist > rightDist) {
-            this.turn_turret_right(rightDist + tinyShoot);
-          } else {
-            this.turn_turret_left(leftDist + tinyShoot);
-          }
-          if (forward) {
-            this.move_forwards(tinyMove);
-          } else {
-            this.move_backwards(tinyMove);
-          }
-          this.shoot();
-        } else {
-          this.shoot();
-        }
+//        leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
+//        if (leftDist > 360) {
+//          leftDist = leftDist - 360;
+//        }
+//        rightDist = this.myVarEnemy[0].angle - myAngle;
+//        if (rightDist < 0) {
+//          rightDist = 360 + rightDist;
+//        }
+//        if (leftDist !== rightDist) {
+//          if (Math.random() > 0.5) {
+//            forward = true;
+//          }
+//          if (leftDist > rightDist) {
+//            this.turn_turret_right(rightDist + tinyShoot);
+//          } else {
+//            this.turn_turret_left(leftDist + tinyShoot);
+//          }
+//          if (forward) {
+//            this.move_forwards(tinyMove);
+//          } else {
+//            this.move_backwards(tinyMove);
+//          }
+//          this.shoot();
+//        } else {
+//          this.shoot();
+//        }
         this.myVarEnemy = undefined;
       }
       else {
@@ -68,8 +68,8 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
-      this.turn_left(45);
-      this.move_forwards(100);
+      this.turn_left(90);
+      this.move_forwards(200);
       this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
