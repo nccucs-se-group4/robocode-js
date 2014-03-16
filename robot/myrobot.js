@@ -7,8 +7,8 @@
     idleCount = 0;
     prototype.doSearch = function(){
       this.turn_turret_right(45);
-      this.turn_right(30);
-      this.move_forwards(40);
+      this.turn_right(15);
+      this.move_forwards(20);
     };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
