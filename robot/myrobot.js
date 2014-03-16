@@ -68,6 +68,7 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
+      this.move_forwards(1000);
       this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
