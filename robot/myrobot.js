@@ -68,15 +68,7 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
-      this.turn_turret_right(15);
-      this.turn_right(15);
-      this.move_forwards(30);
-      this.turn_turret_right(15);
-      this.turn_right(15);
-      this.move_forwards(30);
-      this.turn_turret_right(15);
-      this.turn_right(15);
-      this.move_forwards(30);
+      this.move_forwards(120);
       this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
