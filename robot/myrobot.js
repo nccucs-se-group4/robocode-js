@@ -49,6 +49,11 @@
       else {
          if (this.idleCount > 3) {
           this.doSearch();
+            if (this.idleCount > 4) {
+            this.doSearch();
+            if (this.idleCount > 5) {
+              this.doSearch();
+            }
           }
           return;
         }
@@ -63,10 +68,12 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
+      this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
       this.myVarEnemy = this.enemySpot;
       this.shoot();
+      this.idleCount = 0;
     };
     function MyRobot(){
       MyRobot.superclass.apply(this, arguments);
