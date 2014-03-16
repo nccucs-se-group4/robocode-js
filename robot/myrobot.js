@@ -10,8 +10,8 @@
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
         forward = false;
-        tinyMove = Math.random() * 50;
-        tinyShoot = Math.random() * 10;
+        tinyMove = 20;
+        tinyShoot = 5;
         leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
         if (leftDist > 360) {
           leftDist = leftDist - 360;
@@ -48,7 +48,7 @@
     prototype.onWallCollide = function(){
       this.move_opposide(10);
       this.turn_left(90);
-      this.move_forwards(25);
+      this.move_forwards(30);
     };
     prototype.onHit = function(){
     };
