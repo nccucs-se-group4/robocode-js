@@ -8,7 +8,7 @@
     prototype.doSearch = function(){
       this.turn_turret_right(45);
       this.turn_right(15);
-      this.move_forwards(20);
+      this.move_forwards(25);
     };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, , enemyDist, leftDist, rightDist;
@@ -16,34 +16,34 @@
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
         forward = false;
-        tinyMove = Math.random() * 30;
-        tinyShoot = Math.random() * 10;
-//        leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
-//        if (leftDist > 360) {
-//          leftDist = leftDist - 360;
-//        }
-//        rightDist = this.myVarEnemy[0].angle - myAngle;
-//        if (rightDist < 0) {
-//          rightDist = 360 + rightDist;
-//        }
-//        if (leftDist !== rightDist) {
-//          if (Math.random() > 0.5) {
-//            forward = true;
-//          }
-//          if (leftDist > rightDist) {
-//            this.turn_turret_right(rightDist + tinyShoot);
-//          } else {
-//            this.turn_turret_left(leftDist + tinyShoot);
-//          }
-//          if (forward) {
-//            this.move_forwards(tinyMove);
-//          } else {
-//            this.move_backwards(tinyMove);
-//          }
-//          this.shoot();
-//        } else {
-//          this.shoot();
-//        }
+        tinyMove = Math.random() * 50;
+        tinyShoot = Math.random() * 10 + 10;
+        leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
+        if (leftDist > 360) {
+          leftDist = leftDist - 360;
+        }
+        rightDist = this.myVarEnemy[0].angle - myAngle;
+        if (rightDist < 0) {
+          rightDist = 360 + rightDist;
+        }
+        if (leftDist != rightDist) {
+          if (Math.random() > 0.5) {
+            forward = true;
+          }
+          if (leftDist > rightDist) {
+            this.turn_turret_right(rightDist + tinyShoot);
+          } else {
+            this.turn_turret_left(leftDist + tinyShoot);
+          }
+          if (forward) {
+            this.move_forwards(tinyMove);
+          } else {
+            this.move_backwards(tinyMove);
+          }
+          this.shoot();
+        } else {
+          this.shoot();
+        }
         this.myVarEnemy = undefined;
       }
       else {
