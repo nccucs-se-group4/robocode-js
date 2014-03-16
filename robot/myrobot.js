@@ -4,15 +4,15 @@
   importScripts('../base-robot.js');
   MyRobot = (function(superclass){
     var idleCount, prototype = extend$((import$(MyRobot, superclass).displayName = 'MyRobot', MyRobot), superclass).prototype, constructor = MyRobot;
-    idleCount = 0;
-    prototype.doSearch = function(){
-      this.turn_turret_right(45);
-      this.turn_right(15);
-      this.move_forwards(25);
-    };
+//    idleCount = 0;
+//    prototype.doSearch = function(){
+//      this.turn_turret_right(45);
+//      this.turn_right(15);
+//      this.move_forwards(25);
+//    };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
-      this.idleCount++;
+//      this.idleCount++;
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
         forward = false;
@@ -40,23 +40,13 @@
           } else {
             this.move_backwards(tinyMove);
           }
-          this.shoot();
+          //this.shoot();
         } else {
           this.shoot();
         }
         this.myVarEnemy = undefined;
       }
       else {
-         if (this.idleCount > 3) {
-          this.doSearch();
-            if (this.idleCount > 4) {
-            this.doSearch();
-            if (this.idleCount > 5) {
-              this.doSearch();
-            }
-          }
-          return;
-        }
         this.turn_turret_left(30);
         this.turn_left(30);
         this.move_forwards(Math.random() * 50 + 10);
@@ -66,7 +56,7 @@
       this.move_opposide(10);
       this.turn_left(90);
       this.move_forwards(25);
-      this.idleCount = 0;
+//      this.idleCount = 0;
     };
     prototype.onHit = function(){
 //      this.turn_left(90);
@@ -76,7 +66,7 @@
     prototype.onEnemySpot = function(){
       this.myVarEnemy = this.enemySpot;
       this.shoot();
-      this.idleCount = 0;
+//      this.idleCount = 0;
     };
     function MyRobot(){
       MyRobot.superclass.apply(this, arguments);
