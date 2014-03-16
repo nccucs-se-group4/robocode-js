@@ -8,7 +8,7 @@
     prototype.doSearch = function(){
       this.turn_turret_right(45);
       this.turn_right(20);
-      this.move_forwards(45);
+      this.move_forwards(20);
     };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
@@ -49,17 +49,12 @@
       else {
          if (this.idleCount > 3) {
           this.doSearch();
-          if (this.idleCount > 4) {
-            this.doSearch();
-            if (this.idleCount > 5) {
-              this.doSearch();
-            }
           }
           return;
         }
-        this.turn_turret_left(45);
-        this.turn_left(45);
-        this.move_forwards(Math.random() * 100 + 10);
+        this.turn_turret_left(20);
+        this.turn_left(20);
+        this.move_forwards(Math.random() * 50 + 10);
       }
     };
     prototype.onWallCollide = function(){
@@ -72,7 +67,6 @@
     prototype.onEnemySpot = function(){
       this.myVarEnemy = this.enemySpot;
       this.shoot();
-      this.idleCount = 0;
     };
     function MyRobot(){
       MyRobot.superclass.apply(this, arguments);
