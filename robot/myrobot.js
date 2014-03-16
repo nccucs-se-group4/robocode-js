@@ -70,7 +70,6 @@
     prototype.onHit = function(){
       this.turn_left(45);
       this.move_forwards(100);
-      this.doSearch();
       this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
