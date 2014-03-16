@@ -3,16 +3,16 @@
   var MyRobot, tr;
   importScripts('../base-robot.js');
   MyRobot = (function(superclass){
-    var prototype = extend$((import$(MyRobot, superclass).displayName = 'MyRobot', MyRobot), superclass).prototype, constructor = MyRobot;
-    var idleCount = 0;
+    var idleCount, prototype = extend$((import$(MyRobot, superclass).displayName = 'MyRobot', MyRobot), superclass).prototype, constructor = MyRobot;
+    idleCount = 0;
     prototype.doSearch = function(){
-      this.turn_turret_right(20);
-      this.turn_right(45);
+      this.turn_turret_right(45);
+      this.turn_right(20);
       this.move_forwards(20);
     };
     prototype.onIdle = function(){
       var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
-      ++this.idleCount;
+      this.idleCount++;
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
         forward = false;
