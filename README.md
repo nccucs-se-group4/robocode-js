@@ -1,5 +1,5 @@
 robocode-js
-===========
+==========
 LiveScript (Javascript) implementation of Robocode. Original from http://gumuz.nl/projects/robojs/
 
  * I created this project for students in [NCCUCS Software Engineering Course (2014)](http://nccucs-se.github.io/) to learn teamwork in git/github. For more information, please refer to http://nccucs-se.github.io/
