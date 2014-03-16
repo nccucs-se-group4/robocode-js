@@ -11,7 +11,7 @@
       this.move_forwards(25);
     };
     prototype.onIdle = function(){
-      var myAngle, forward, tinyMove, tinyShoot, , enemyDist, leftDist, rightDist;
+      var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
       this.idleCount++;
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
