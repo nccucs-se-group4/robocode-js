@@ -11,12 +11,12 @@
       this.move_forwards(20);
     };
     prototype.onIdle = function(){
-      var myAngle, forward, tinyMove, tinyShoot, leftDist, rightDist;
+      var myAngle, forward, tinyMove, tinyShoot, , enemyDist, leftDist, rightDist;
       this.idleCount++;
       myAngle = this.me.angle % 360;
       if (this.myVarEnemy) {
         forward = false;
-        tinyMove = Math.random() * 30
+        tinyMove = Math.random() * 30;
         tinyShoot = Math.random() * 10;
 //        leftDist = myAngle + 360 - this.myVarEnemy[0].angle;
 //        if (leftDist > 360) {
