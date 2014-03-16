@@ -31,9 +31,9 @@
             forward = true;
           }
           if (leftDist > rightDist) {
-            this.turn_turret_right(rightDist + 5 + tinyShoot);
+            this.turn_turret_right(rightDist + tinyShoot);
           } else {
-            this.turn_turret_left(leftDist + 5 + tinyShoot);
+            this.turn_turret_left(leftDist + tinyShoot);
           }
           if (forward) {
             this.move_forwards(tinyMove);
@@ -57,9 +57,9 @@
           }
           return;
         }
-        this.turn_turret_left(20);
-        this.turn_left(20);
-        this.move_forwards(Math.random() * 30 + 10);
+        this.turn_turret_left(45);
+        this.turn_left(45);
+        this.move_forwards(Math.random() * 100 + 10);
       }
     };
     prototype.onWallCollide = function(){
@@ -68,8 +68,6 @@
       this.idleCount = 0;
     };
     prototype.onHit = function(){
-      this.yell("Oops!");
-      this.idleCount = 0;
     };
     prototype.onEnemySpot = function(){
       this.myVarEnemy = this.enemySpot;
